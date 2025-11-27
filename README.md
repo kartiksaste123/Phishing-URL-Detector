@@ -46,7 +46,7 @@ This project implements a phishing URL detection system that uses machine learni
 
 ```
 AIML/
-├── Code & Models/                    # Main project directory
+├── CodeAndModels/                    # Main project directory
 │   ├── train_model.py               # Train all models
 │   ├── test_url.py                  # Test URLs via command line
 │   ├── streamlit_app.py             # Streamlit web application
@@ -74,8 +74,8 @@ AIML/
 ### Step 1: Install Dependencies
 
 ```bash
-cd "Code & Models"
-pip install -r requirements.txt
+cd CodeAndModels
+pip install -r ../requirements.txt
 ```
 
 Or install manually:
@@ -96,7 +96,7 @@ python -c "import streamlit; print('✓ All dependencies installed')"
 Train individual models or all models at once:
 
 ```bash
-cd "Code & Models"
+cd CodeAndModels
 python train_model.py
 ```
 
@@ -111,7 +111,7 @@ You'll be presented with a menu:
 Test URLs via command line interface:
 
 ```bash
-cd "Code & Models"
+cd CodeAndModels
 python test_url.py
 ```
 
@@ -124,7 +124,7 @@ python test_url.py
 Generate visualization graphs for all models:
 
 ```bash
-cd "Code & Models"
+cd CodeAndModels
 python generate_report_graphs.py
 ```
 
@@ -142,7 +142,7 @@ This creates a `report_graphs/` directory with:
 Run the Streamlit app locally:
 
 ```bash
-cd "Code & Models"
+cd CodeAndModels
 streamlit run streamlit_app.py
 ```
 
@@ -190,7 +190,7 @@ git push -u origin main
 2. Sign in with your GitHub account
 3. Click "New app"
 4. Select your repository
-5. **Set Main file path**: `Code & Models/streamlit_app.py`
+5. **Set Main file path**: `CodeAndModels/streamlit_app.py`
 6. Click "Deploy"
 
 #### Step 3: Access Your App
@@ -200,7 +200,7 @@ git push -u origin main
 
 ### Important Notes for Deployment
 
-- **Model Files**: Ensure all 9 `.pkl` files are committed to GitHub
+- **Model Files**: Ensure all 9 `.pkl` files are in the `CodeAndModels/` directory and committed to GitHub
 - **File Size**: If files are >100MB, use Git LFS:
   ```bash
   git lfs install
@@ -208,6 +208,7 @@ git push -u origin main
   git add .gitattributes
   ```
 - **Dataset File**: Optional for deployment (only needed for retraining or graph generation)
+- **Directory Name**: The directory is named `CodeAndModels` (without spaces or special characters) to avoid deployment issues
 
 ## 📊 Model Performance
 
@@ -247,6 +248,8 @@ The system extracts 29 features from URLs including:
 ## 📄 Files Description
 
 ### Core Files
+
+All core files are in the `CodeAndModels/` directory:
 
 - **`train_model.py`**: Main training script with menu system to train any of the 9 models
 - **`test_url.py`**: Command-line interface for testing URLs with trained models
