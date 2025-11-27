@@ -1,0 +1,60 @@
+Phishing URL Examples for Testing
+==================================
+
+These URLs are designed to trigger phishing detection based on suspicious features:
+
+1. IP Address Instead of Domain:
+   http://192.168.1.100/login/verify?account=update
+
+2. Suspicious Subdomain with Brand Name:
+   https://secure-paypal-verify.com/account/update
+   https://microsoft-account-verify.net/login
+   https://bank-account-update.com/secure/login
+
+3. Long URL with Many Special Characters:
+   http://suspicious-site.com/login/verify?account=update&action=required&urgent=true
+
+4. Suspicious Path Structure:
+   http://example.com/secure/account/verify/update/now
+   https://test.com/login/verify/account/suspend/action
+
+5. URL with @ Symbol (suspicious):
+   http://user@malicious-site.com/login
+
+6. URL with Tilde (~) Symbol:
+   https://suspicious.com/~user/login/verify
+
+7. Many Query Parameters:
+   http://test.com/login?account=verify&update=required&action=now&urgent=true&click=here
+
+8. Suspicious Keywords in URL:
+   http://secure-bank-verify.com/account/update/required
+   https://login-verify-account.com/update/now
+   http://account-suspend-restrict.com/login
+
+9. Mixed Case with Suspicious Pattern:
+   http://SeCuRe-BaNk-VeRiFy.com/login
+
+10. URL with Many Dashes and Underscores:
+    http://secure-account-verify-update.com/login_now_required
+
+11. Suspicious Domain with Brand Name:
+    https://paypal-security-verify.com
+    https://microsoft-account-update.net
+    https://google-account-verify.org
+
+12. URL with Percent Encoding (suspicious):
+    http://test.com/login%2Fverify%3Faccount%3Dupdate
+
+13. Long Random String in URL:
+    http://example.com/abcdefghijklmnopqrstuvwxyz123456/login
+
+14. Suspicious Subdomain Pattern:
+    https://www-paypal-com.secure-verify.com/login
+
+15. URL with Hash (#) Symbol:
+    http://suspicious.com/login#verify-account-update
+
+Note: These are example URLs for testing purposes only.
+Do not use these URLs in real scenarios as they may be actual phishing sites.
+

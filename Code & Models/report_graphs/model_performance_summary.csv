@@ -1,0 +1,9 @@
+Model,Accuracy,Precision,Recall,F1-Score
+KNN (sklearn),0.9685,0.9645,0.9714,0.9680
+Logistic Regression,0.9125,0.9111,0.9102,0.9107
+Decision Tree (Scratch),0.9610,0.9593,0.9612,0.9602
+Random Forest,0.9895,0.9908,0.9878,0.9893
+XGBoost,0.9965,0.9969,0.9959,0.9964
+SVM (Scratch),0.5100,0.0000,0.0000,0.0000
+SVM (sklearn),0.9205,0.9109,0.9286,0.9197
+Naive Bayes,0.8280,0.9609,0.6765,0.7940
