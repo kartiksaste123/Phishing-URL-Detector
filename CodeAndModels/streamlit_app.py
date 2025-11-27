@@ -239,14 +239,28 @@ def load_model(model_choice):
     
     filename_list, model_type = model_files.get(model_choice, model_files['1'])
     
-    # Find the first existing file
+    # Get the directory where this script is located
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Find the first existing file (check in script directory)
     filename = None
     for fname in filename_list:
-        if os.path.exists(fname):
+        # Try absolute path first (script directory)
+        full_path = os.path.join(script_dir, fname)
+        if os.path.exists(full_path):
+            filename = full_path
+            break
+        # Fallback: try relative path (current working directory)
+        elif os.path.exists(fname):
             filename = fname
             break
     
     if filename is None:
+        # Show helpful error with available files
+        available_files = [f for f in os.listdir(script_dir) if f.endswith('.pkl')]
+        st.error(f"⚠️ Model file not found! Looking for: {filename_list}")
+        if available_files:
+            st.info(f"Available .pkl files in directory: {', '.join(available_files)}")
         return None, None, None, None, None
     
     # Custom unpickler
@@ -536,7 +550,9 @@ def main():
     st.caption(f"Showing visualizations for: **{model_name}**")
     
     # Try to load and display graphs if they exist
-    graph_dir = 'report_graphs'
+    # Get the directory where this script is located
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    graph_dir = os.path.join(script_dir, 'report_graphs')
     if os.path.exists(graph_dir):
         # Map model names to actual graph file names
         graph_name_map = {
